@@ -1,0 +1,2 @@
+# activitytimetracker
+This is a work-in-progress, but the goal is to develop a web-app that allows users to track the time they spend on various activities. Upon start-up, the app prompts users to input an activity and the amount of time they wish to spend on that activity and then it allows them to see how much time they have spent so far on the activity and how much time they have left to spend in order to reach their goal.
