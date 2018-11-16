@@ -1,0 +1,212 @@
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+html,body {
+	font-family: 'Strait', sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	background: rgb(55,40,72);
+	background: linear-gradient(180deg, rgba(55,40,72,1) 13%, rgba(51,97,111,1) 54%, rgba(55,40,72,1) 100%, rgba(57,163,163,1) 170%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align:center;
+	padding:4px;
+	color:#fff;
+}
+.wrapper {
+	border:1.5px solid #FFFFFF;
+	display:block;
+	height:90%;
+	width: 100%;
+	max-width: 560px;
+	text-align:center;
+	margin:20px auto;
+	padding:0px;
+	border-radius:1em;
+	background: rgb(56,37,70);
+	background: linear-gradient(45deg, rgba(56,37,70,1) 10%, rgba(62,176,176,1) 100%);
+}
+
+.wrapper1 {
+	border:1.5px solid #FFFFFF;
+	display:block;
+	height:90%;
+	width: 100%;
+	max-width: 560px;
+	text-align:center;
+	margin:20px auto;
+	padding:0px;
+	border-radius:1em;
+	background: rgb(56,37,70);
+	background: linear-gradient(45deg, rgba(56,55,88,1) 0%, rgba(62,176,176,1) 100%);
+}
+
+.second {
+	display: none;
+}
+
+.timer {
+	display:flex;
+	width: 100%;
+	padding:5px 2px;
+	margin:20px 0px;
+	background-image:linear-gradient(#000000, #4f4f4f, #000000);
+	color:#fff;
+}
+
+.timer div {
+	flex:1;
+	color: #f0f0f0;
+	font-size:24px;
+	padding:5px 2px;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+
+ button {
+	  font-family: 'Strait', sans-serif;
+		color: #E3E3E3;
+		font-size: .87em;
+    min-width: 200px;
+	  border: 1.1px solid #C9C9C9;
+		background: linear-gradient(0deg, rgba(56,44,84,1) 13%, rgba(62,176,176,1) 100%);
+	  border-radius: 5px;
+	  cursor: pointer;
+	  padding: 0px 40px;
+	  display: inline-block;
+	  margin-top: 3.3%;
+	  text-transform: uppercase;
+	  line-height: 2.7em;
+	  font-weight: normal;
+	  outline: none;
+	  position: relative;
+		letter-spacing: 2.9px;
+	  -webkit-transition: all 0.3s;
+	  transition: all 0.3s;
+}
+
+button:hover {
+	color: #FFFFFF;
+	font-weight: 500;
+	border: 1.1px solid #FFFFFF;
+	background: linear-gradient(0deg, rgba(56,44,84,1) 13%, rgba(80,231,231,1) 100%);
+}
+
+/* Styling for the start, pause, and stop buttons */
+#start, #pause, #stop {
+	width: 95%;
+}
+
+#stop {
+	margin-bottom: 20px;
+}
+
+#start {
+	opacity: ;
+	display: ;
+	transition: opacity .6s linear;
+}
+
+.header-banner1{
+	height: 2.4em;
+	padding: .55em 0 .5em 0;
+	margin-bottom: .3em;
+	background: rgba(0,0,0,.6);
+}
+
+.header-banner2{
+	height: 2.4em;
+	padding: .55em 0 .5em 0;
+	background: rgba(0,0,0,.40);
+}
+
+#titleText {
+	font-family: 'Strait', sans-serif;
+	padding: 8px 0px 8px 0px;
+	letter-spacing: 2.6px;
+	font-size: 1.9em;
+}
+
+#userActivity {
+	padding-right: 79px;
+	padding-bottom: 7px;
+	margin-top: 10px;
+}
+
+#userHours {
+	padding-bottom: 7px;
+	margin-top: 10px;
+}
+
+.logged {
+	margin: 15px 0px 15px 0px;
+}
+
+.logged p {
+    padding-top: 10px;
+    color: #F0F0F0;
+    letter-spacing: 1.3px;
+    text-align: center;
+}
+
+#hoursToSpend {
+	margin: .5em 0 .5em 0;
+  color: 	#F0F0F0;
+}
+
+/* All styles for the hoursToSpend progress-bar are kept below here */
+.hoursGoal {
+	margin-top: 5%;
+	margin: 15px 0px 15px 0px;
+}
+
+
+.progress_container {
+  width: 94%;
+	padding: 0 12% 0 16%;
+	position: inherit;
+}
+
+.progress {
+    overflow: hidden;
+    height: 19px;
+    margin-bottom: 10px 10px 10px 10px;
+    background-color: #89949B;
+    background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-image: linear-gradient(top, #f5f5f5, #f9f9f9);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#f9f9f9', GradientType=0);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.progress #bar {
+    width: 0%;
+    height: 20px;
+		background-size: 30px 30px;
+		background-color: #15f738;
+    background-image: linear-gradient(135deg, rgba(14, 171, 38, 1) 25%, transparent 25%,
+                      transparent 50%, rgba(14, 171, 38, 1) 50%, rgba(14, 171, 38, 1) 75%,
+                      transparent 75%, transparent);
+    animation: animate-stripes 3s linear infinite;
+    -webkit-transition: width 0.6s ease;
+    -moz-transition: width 0.6s ease;
+    -ms-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+}
+
+/* animation for the progress bar's stripes */
+@keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External fonts links will go below here -->
+    <link href="https://fonts.googleapis.com/css?family=Strait" rel="stylesheet">
+
+    <title>Time Spent - A simple way to track your progress by the minute</title>
+  </head>
+  <body>
+
+    <h1 id="titleText">Time Spent - A simple way to track your progress by the minute</h1>
+    <!-- The activity name that the user is spending time on will be displayed at the top of the page -->
+      <p id="userActivity">Activity:</p>
+    <!-- The user's desired # of hours that they wish to spend on an activity will be displayed at the top of the page -->
+      <p id="userHours">Hours to spend:</p>
+
+    	<div class="wrapper">
+
+
+
+    		<div class="timer">
+    			<div class="hour">
+    				<p id="h">0 Min</p>
+    			</div>
+    			<div class="minute">
+    				<p id="m">0 Sec</p>
+    			</div>
+    			<div class="second">
+    				<p id="s">0 Ms</p>
+    			</div>
+    		</div>
+
+    		<button id="start">Start</button>
+    		<button id="pause">Pause</button>
+    		<button id="stop">Stop</button>
+        <button id="loggy">Need Help?</button>
+
+        </div>
+      </div>
+    </div>
+
+<div class="wrapper">
+
+  <div class="logged">
+    <div class="header-banner1">
+      <h3>Time you have spent:</h3>
+    </div>
+
+    <p id="secLogger">Seconds: 0</p>
+    <p id="minLogger">Minutes: 0</p>
+  </div>
+
+      <div class="hoursGoal">
+        <div class="header-banner2">
+          <h3>Progress:</h3>
+        </div>
+
+        <h2 id="hoursToSpend">0.00%</h2>
+
+      <div class="progress_container">
+      <div class="progress progress-dangerprogress-striped active">
+
+      <!-- Progress bar that compares the user's logged time (in minutes) to the minutes they desire to spend on the activity  -->
+      <div id="bar">
+      <!-- This embedded style element has it's width property adjusted to achieve the progress bar -->
+          <style="width: 0%;"></style>
+        </div>
+      </div>
+
+    <script type="text/javascript">
+
+    let startBtn = document.getElementById('start'),
+    	stopBtn = document.getElementById('stop'),
+    	pauseBtn = document.getElementById('pause'),
+      logBtn = document.getElementById('loggy'),
+      loggedSeconds = document.getElementById('secLogger'),
+      loggedMinutes = document.getElementById('minLogger')
+    	hoursGoal = document.getElementById('hoursToSpend'),
+    	userDesiredHours = document.getElementById('userHours'),
+    	progBar = document.getElementById('bar'),
+    	hour = document.getElementById('h'),
+    	minute = document.getElementById('m'),
+    	second = document.getElementById('s');
+
+    var globalCurrentMinutes;
+    var globalCurrentSeconds;
+
+    startBtn.addEventListener('click',start);
+    stopBtn.addEventListener('click',stop);
+    pauseBtn.addEventListener('click',pause);
+    logBtn.addEventListener('click',log);
+
+    //**Script for the activity page/main page go below here
+
+    //**Script for the time-tracking page goes below here
+
+    //This prompts the user and asks for the amount of hours they want to spend on the activity
+
+    //This is to continuously run the log() function
+    var update_loop = setInterval(log, 50);
+    var update_loop = setInterval(goalReached, 50);
+    //Functions for the 'start' and 'stop' and 'pause' go below here
+    var stop = false;
+    var pause = false;
+
+    // variable for the 'stretch-goals' options in dropdown of minutes to spend/log on an activity. It's value is equivalent to the number of hours
+    var hoursToSpend = 2 * 60;
+
+
+    function start() {
+    	// extract the integer value from times
+    	let h = parseInt(hour.innerText),
+    			m = parseInt(minute.innerText),
+    	  	s = parseInt(second.innerText);
+    	// increment seconds
+    	s = s + 1;
+    	// if its 60 seconds then set it to 0 and increse minute
+    	if(s == 60) {
+    		s = 0;
+    		// if its 60 minutes then set it to 0 and increse hour
+    		if(m == 60) {
+    			m = 0;
+    			h = h + 1;
+    			hour.innerText = h + " Min";
+    		}
+    		m = m + 1;
+    		minute.innerText = m + " Sec";
+    	}
+    	// if stop is not pressed
+    	if(!stop) {
+    		// if pause is not pressed
+    		if(!pause) {
+    			// increase time
+    			second.innerText = s + " Ms";
+    			setTimeout(start,17);
+    		} else {
+    			// toggle pause
+    			pause = !pause;
+    		}
+    	} else {
+    		// toggle stop
+    		stop = !stop;
+    	}
+    	//Here I make the current "seconds" and "minutes" on the active stopwatch into global variables for use within other functions
+      var currentTime = m;
+      window.globalCurrentSeconds = currentTime;
+      var currentMinutes = h;
+      window.globalCurrentMinutes = currentMinutes;
+    }
+
+    var totalProgressPercent;
+    // a new variable with it's value set to the sum of the (logged) current minutes and current seconds on the stopwatch
+    function goalReached() {
+    	if(totalProgressPercent >= 100.00) {
+    		alert("You did it!");
+    		stop = true;
+    		break;
+    	}
+    }
+
+    function log() {
+      	loggedSeconds.innerText = "Seconds: " + globalCurrentSeconds;
+      	loggedMinutes.innerText = "Minutes: " + globalCurrentMinutes;
+    		var MinutesAndSeconds = globalCurrentMinutes + (globalCurrentSeconds / 60);
+    		window.globalMinutesAndSeconds = MinutesAndSeconds;
+
+    		let hoursGoalInMinutes = hoursToSpend - globalMinutesAndSeconds;
+    		let hoursGoalInHours = hoursGoalInMinutes / 60;
+    		let totalProgressInDecimal = (globalMinutesAndSeconds) / (hoursToSpend);
+    		totalProgressPercent = totalProgressInDecimal * 100;
+    		progBar.style.width = totalProgressPercent.toFixed(2) + "%";
+    		hoursGoal.innerText = totalProgressPercent.toFixed(2) + "%";
+
+    }
+
+    function stop() {
+    	stop = true;
+    	second.innerText = 0 + " Ms";
+    	minute.innerText = 0 + " Sec";
+    	hour.innerText = 0 + " Min";
+    }
+
+    function pause() {
+    	pause = true;
+    }
+
+
+    </script>
+  </div>
+
+  </body>
+</html>

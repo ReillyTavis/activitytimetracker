@@ -1,0 +1,140 @@
+html,body {
+	font-family: 'Strait', sans-serif;
+	text-transform: uppercase;
+	background: rgb(55,40,72);
+	background: linear-gradient(180deg, rgba(55,40,72,1) 13%, rgba(51,97,111,1) 54%, rgba(55,40,72,1) 100%, rgba(57,163,163,1) 170%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.main-header {
+		margin-top: 32%;
+}
+
+.main-header h1 {
+	font-family: 'Strait', sans-serif;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.8em;
+	font-weight: bold;
+	line-height: .5em;
+}
+
+.main-header h2 {
+	font-family: 'Strait', sans-serif;
+	color: #E3E3E3;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: .6px;
+	line-height: 1em;
+	font-size: 1.3em;
+	padding-top: 5%;
+	padding-left: 21%;
+}
+
+.main-header .fa-dot-circle {
+	font-size: .55em;
+	padding-right: 16px;
+	margin-bottom: 13px;
+}
+
+.main-header .kerned {
+	letter-spacing: 2px;
+	padding-left: 200px;
+}
+
+.main-header .indented {
+	letter-spacing: 1px;
+	padding-left: 34px;
+}
+
+.btn-group {
+	width: 100%;
+}
+
+.carousel {
+    margin-top: 20px;
+}
+
+.hoursOptionsSlider {
+	margin: 20px;
+}
+
+a.carousel-control.left, a.carousel-control.right  {
+   background: none;
+}
+
+.carousel-indicators{
+   display: none;
+}
+
+#hour1, #hour2 {
+	color: #FFF;
+	border-radius: 3px;
+	font-family: 'Strait', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	padding: 12.5px 0px;
+	min-width: 80px;
+	width: 49%;
+	margin: 5% 26% 5% 26%;
+	border: 1px solid #e3e3e3;
+	background: linear-gradient(0deg, rgba(56,44,84,1) 13%, rgba(62,176,176,1) 100%);
+}
+
+#hour1:hover, #hour2:hover {
+	background: linear-gradient(0deg, rgba(56,44,84,1) 13%, rgba(80,231,231,1) 100%);
+}
+
+br {
+	height: 3px;
+}
+
+hr {
+	opacity: 100%;
+}
+
+#container {
+	width: 79%;
+	max-width: 500px;
+	margin: 8px auto;
+	background: none;
+}
+
+
+/*media query below */
+@media screen and (max-width: 700px) {
+	.main-header h1 {
+		line-height: 8px;
+		white-space: nowrap;
+	}
+	.main-header h2 {
+		line-height: 1em;
+		white-space: nowrap;
+	}
+}
+@media screen and (max-width: 500px) {
+	.main-header h2 {
+		line-height: 1em;
+		padding-left: 20px;
+		font-size: 1.2em;
+	}
+}
+@media screen and (max-width: 400px) {
+	.main-header {
+			margin-top: 2%;
+	}
+	.main-header h1 {
+		font-size: 1.4em;
+	}
+	.main-header h2 {
+		line-height: .8em;
+		padding-left: 5px;
+		font-size: 1em;
+	}
+	#hour1, #hour2 {
+		font-size: 1em;
+	}
+}
